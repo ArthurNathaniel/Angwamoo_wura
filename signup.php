@@ -28,24 +28,59 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
+    <?php include 'cdn.php' ?>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/signup.css">
 </head>
+
 <body>
-    <h2>Sign Up</h2>
-    <form method="POST">
-        <label for="email">Email Address</label>
-        <input type="email" name="email" required><br>
+    <div class="signup_all">
+        <div class="back">
+          <a href="index.php">
+          <i class="fa-solid fa-arrow-left-long"></i>
+          </a>
+        </div>
+        <div class="signup_img">
+            <img src="./images/logo.png" alt="">
+        </div>
+        <div class="welcome_back">
+            <h3>Welcome Back 👋</h3>
+            <p>Signup to your account</p>
+        </div>
+        <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" name="phone" required><br>
+        <form method="POST">
+            <div class="forms">
+                <label for="email">Email Address</label>
+                <input type="email" placeholder="Enter your email address" name="email" required>
+            </div>
 
-        <label for="password">Password</label>
-        <input type="password" name="password" required><br>
+            <div class="forms">
+                <label for="phone">Phone Number</label>
+                <input type="tel" placeholder="Enter your phone number" name="phone" required>
+            </div>
 
-        <button type="submit">Sign Up</button>
-        <?php if (isset($error)) echo "<p>$error</p>"; ?>
-    </form>
+            <div class="forms">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Enter your password" name="password" required>
+            </div>
+
+            <div class="forms">
+                <button type="submit">Sign Up</button>
+            </div>
+
+            <div class="forms">
+                <p>Have an account? <a href="login.php"><span>Login</span></a></p>
+            </div>
+            
+        </form>
+
+    </div>
 </body>
+
 </html>

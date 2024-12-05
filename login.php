@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
-        header('Location: profile.php');
+        header('Location: home.php');
         exit;
     } else {
         $error = 'Invalid credentials.';
@@ -25,21 +25,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <?php include 'cdn.php' ?>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/signup.css">
 </head>
+
 <body>
-    <h2>Login</h2>
-    <form method="POST">
-        <label for="email_or_phone">Email or Phone</label>
-        <input type="text" name="email_or_phone" required><br>
+    <div class="signup_all">
+        <div class="back">
+            <a href="index.php">
+                <i class="fa-solid fa-arrow-left-long"></i>
+            </a>
+        </div>
+        <div class="signup_img">
+            <img src="./images/logo.png" alt="">
+        </div>
+        <div class="welcome_back">
+            <h3>Welcome Back 👋</h3>
+            <p>login to your account</p>
+        </div>
+        <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
 
-        <label for="password">Password</label>
-        <input type="password" name="password" required><br>
+        <form method="POST">
+            <div class="forms">
+                <label for="email_or_phone">Email or Phone</label>
+                <input type="text" name="email_or_phone" required>
+            </div>
+            <div class="forms">
 
-        <button type="submit">Login</button>
-        <?php if (isset($error)) echo "<p>$error</p>"; ?>
-    </form>
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
+            </div>
+
+            <div class="forms">
+                <button type="submit">Login</button>
+            </div>
+            <div class="forms">
+            <p>Don't have an account? <a href="signup.php"><span>Sign Up</span></a></p>
+
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>

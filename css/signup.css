@@ -1,0 +1,28 @@
+.signup_all{
+    
+    padding: 0 10%;
+}
+
+.back{
+    margin-top: 15px;
+}
+
+.back a{
+    color: #21402A;
+}
+
+.signup_img{
+    background-color: #21402A;
+    height: 150px;
+    width: 150px;
+    margin-block: 30px; 
+    padding-top: 15px;
+    border-radius: 50%;
+}
+
+.signup_img img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    
+}

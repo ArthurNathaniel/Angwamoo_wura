@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Onest", sans-serif;
+
+    text-decoration: none;
+}
+
+body {
+    font-family: "Onest", sans-serif;
+
+
+    background-color: #fff;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .forms{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .forms input{
+  padding-left: 3%;
+    height: 45px;
+    width: 100%;
+  }
+
+  .forms button{
+    height: 45px;
+    background-color: #21402A;
+    color: #fff;
+    border: none;
+  }
+
+  .error{
+    background-color: rgba(251, 10, 10, 0.353);
+    color: rgb(215, 62, 62);
+    padding: 0 2%;
+    padding-block: 10px;
+    margin-top: 10px;
+  }
